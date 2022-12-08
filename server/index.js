@@ -9,6 +9,14 @@ app.use(express.json());
 
 //Routes
 
+app.get("/", async (req, res) => {
+  try {
+    res.render('index',{})
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
 app.get("/games", async (req, res) => {
   try {
     const games = await pool.query("SELECT name, gameid FROM games");
