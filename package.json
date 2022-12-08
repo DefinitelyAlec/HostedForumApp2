@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd frontend && npm config set legacy-peer-deps true && npm install && npm run build"
+  },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3"
