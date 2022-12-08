@@ -4,13 +4,7 @@ const cors = require("cors");
 const pool = require("./db");
 
 //middleware
-app.use(cors({
-  origin: [
-    'http://localhost:5000',
-    'https://chat-app-gametips-heroku.herokuapp.com/',
-    'http://chat-app-gametips-heroku.herokuapp.com/'
-  ]
-}));
+app.use(cors());
 app.use(express.json());
 
 //Routes
