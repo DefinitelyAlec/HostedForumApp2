@@ -4,7 +4,13 @@ const cors = require("cors");
 const pool = require("./db");
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5000',
+    'https://chat-app-gametips-heroku.herokuapp.com/',
+    'http://chat-app-gametips-heroku.herokuapp.com/'
+  ]
+}));
 app.use(express.json());
 
 //Routes
@@ -298,5 +304,5 @@ app.delete("/threads/:id", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`started on port ${process.env.PORT}`);
+  console.log(`started on port ${process.env.PORT || 5000}`);
 });

@@ -52,7 +52,7 @@ const InputTip = () => {
 
   const getGameNames = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/games`);
+      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com/games`);
       const jsonData = await response.json();
       setGameNames(jsonData);
     } catch (error) {
@@ -64,7 +64,7 @@ const InputTip = () => {
     const getMapNames = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/maps/`.concat(gameId)
+          `https://chat-app-gametips-heroku.herokuapp.com/maps/`.concat(gameId)
         );
         const jsonData = await response.json();
         setMapNames(jsonData);
@@ -76,7 +76,7 @@ const InputTip = () => {
     const getCharacterNames = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/characters/`.concat(gameId)
+          `https://chat-app-gametips-heroku.herokuapp.com/characters/`.concat(gameId)
         );
         const jsonData = await response.json();
         setCharacterNames(jsonData);
@@ -97,7 +97,7 @@ const InputTip = () => {
     e.preventDefault();
     try {
       const body = { tipName };
-      await fetch(`${process.env.REACT_APP_API_URL}/threads`, {
+      await fetch(`https://chat-app-gametips-heroku.herokuapp.com/threads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

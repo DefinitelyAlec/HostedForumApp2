@@ -18,7 +18,7 @@ const TipsThreads = () => {
 
   const getThreads = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/tipthreads`);
+      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com/tipthreads`);
       const jsonData = await response.json();
       setThreads(jsonData);
     } catch (error) {

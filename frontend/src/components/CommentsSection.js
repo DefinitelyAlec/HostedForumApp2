@@ -41,7 +41,7 @@ export default function Comments() {
     const getComments = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/threads/`.concat(String(id))
+          `https://chat-app-gametips-heroku.herokuapp.com/threads/`.concat(String(id))
         ).then(setSpinner(true));
         const jsonData = await response.json();
         setComments(jsonData);
@@ -98,7 +98,7 @@ export default function Comments() {
     try {
       const body = { amountToChange };
       var URI =
-      `${process.env.REACT_APP_API_URL}/threads/`.concat(String(id)) +
+      `https://chat-app-gametips-heroku.herokuapp.com/threads/`.concat(String(id)) +
         "/".concat(String(comment.content_id)) +
         "/changeLikeRatio";
       await fetch(URI, {
@@ -159,7 +159,7 @@ export default function Comments() {
       const contents = commentToPost;
       const body = { user_id, contents };
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/threads/`.concat(String(id)),
+        `https://chat-app-gametips-heroku.herokuapp.com/threads/`.concat(String(id)),
         {
           method: "POST",
           headers: {
