@@ -70,7 +70,7 @@ export default function ButtonAppBar() {
     const email = res.profileObj.email;
     try {
       const response1 = await fetch(
-        "http://localhost:5000/getUser/".concat(email)
+        `${process.env.REACT_APP_API_URL}/getUser/`.concat(email)
       );
       possibleUser = await response1.json();
     } catch (error) {

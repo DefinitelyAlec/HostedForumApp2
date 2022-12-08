@@ -40,7 +40,7 @@ export default function SignUp() {
         const imgurl = res.profileObj.imageUrl
         console.log(name);
         try {
-            const response1 = await fetch("http://localhost:5000/checkUserName/".concat(name));
+            const response1 = await fetch(`${process.env.REACT_APP_API_URL}/checkUserName/`.concat(name));
             possibleUser = await response1.json();
         } catch (error) {
             console.error(error.message);
@@ -51,7 +51,7 @@ export default function SignUp() {
         }
         setUserNameTaken(false);
         try {
-            const response2 = await fetch("http://localhost:5000/getUser/".concat(email));
+            const response2 = await fetch(`${process.env.REACT_APP_API_URL}/getUser/`.concat(email));
             possibleUser = await response2.json();
         } catch (error) {
             console.log(error.message);
@@ -59,7 +59,7 @@ export default function SignUp() {
         if (possibleUser.length === 0) {
             try {
                 const body = { email, name, imgurl };
-                const response3 = await fetch("http://localhost:5000/newUser", {
+                const response3 = await fetch(`${process.env.REACT_APP_API_URL}/newUser`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

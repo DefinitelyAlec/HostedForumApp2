@@ -70,7 +70,7 @@ export default function TipsComponent() {
     const getTips = async (user_id) => {
       try {
         const response = await fetch(
-          "http://localhost:5000/tips/".concat(String(user_id))
+          `${process.env.REACT_APP_API_URL}/tips/`.concat(String(user_id))
         );
         const jsonData = await response.json();
         setTips(jsonData);
@@ -83,7 +83,7 @@ export default function TipsComponent() {
 
   const deleteTip = async (tipid) => {
     try{
-      const response = await fetch("http://localhost:5000/tips/tip/".concat(String(tipid)), {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/tips/tip/`.concat(String(tipid)), {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

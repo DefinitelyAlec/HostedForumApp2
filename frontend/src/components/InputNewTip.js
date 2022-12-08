@@ -52,7 +52,7 @@ const InputTip = () => {
 
   const getGameNames = async () => {
     try {
-      const response = await fetch("http://localhost:5000/games");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/games`);
       const jsonData = await response.json();
       setGameNames(jsonData);
     } catch (error) {
@@ -64,7 +64,7 @@ const InputTip = () => {
     const getMapNames = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/maps/".concat(gameId)
+          `${process.env.REACT_APP_API_URL}/maps/`.concat(gameId)
         );
         const jsonData = await response.json();
         setMapNames(jsonData);
@@ -76,7 +76,7 @@ const InputTip = () => {
     const getCharacterNames = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/characters/".concat(gameId)
+          `${process.env.REACT_APP_API_URL}/characters/`.concat(gameId)
         );
         const jsonData = await response.json();
         setCharacterNames(jsonData);
@@ -97,7 +97,7 @@ const InputTip = () => {
     e.preventDefault();
     try {
       const body = { tipName };
-      await fetch("http://localhost:5000/threads", {
+      await fetch(`${process.env.REACT_APP_API_URL}/threads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

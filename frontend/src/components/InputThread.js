@@ -20,7 +20,7 @@ const InputThread = () => {
 
   const getGameNames = async () => {
     try {
-      const response = await fetch("http://localhost:5000/games");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/games`);
       const jsonData = await response.json();
       setGameNames(jsonData);
     } catch (error) {
@@ -45,7 +45,7 @@ const InputThread = () => {
     e.preventDefault();
     try {
       const body = { gameName, description };
-      await fetch("http://localhost:5000/threads", {
+      await fetch(`${process.env.REACT_APP_API_URL}/threads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
