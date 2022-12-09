@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.a7da4f16.js",
+    "static/media/pngfind.com-mario-bros-png-2835524.png": "/static/media/pngfind.com-mario-bros-png-2835524.9fd11c115a4dfba06d64.png",
+    "index.html": "/index.html",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.a7da4f16.js.map": "/static/js/main.a7da4f16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.a7da4f16.js"
+  ]
+}
