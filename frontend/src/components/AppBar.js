@@ -70,7 +70,7 @@ export default function ButtonAppBar() {
     const email = res.profileObj.email;
     try {
       const response1 = await fetch(
-        `https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/getUser/`.concat(email)
+        `https://chat-app-gametips-heroku.herokuapp.com/getUser/`.concat(email)
       );
       possibleUser = await response1.json();
     } catch (error) {

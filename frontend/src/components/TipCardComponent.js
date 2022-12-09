@@ -70,7 +70,7 @@ export default function TipsComponent() {
     const getTips = async (user_id) => {
       try {
         const response = await fetch(
-          `https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/tips/`.concat(String(user_id))
+          `https://chat-app-gametips-heroku.herokuapp.com/tips/`.concat(String(user_id))
         );
         const jsonData = await response.json();
         setTips(jsonData);
@@ -83,7 +83,7 @@ export default function TipsComponent() {
 
   const deleteTip = async (tipid) => {
     try{
-      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/tips/tip/`.concat(String(tipid)), {
+      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com/tips/tip/`.concat(String(tipid)), {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

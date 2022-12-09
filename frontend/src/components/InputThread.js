@@ -20,7 +20,7 @@ const InputThread = () => {
 
   const getGameNames = async () => {
     try {
-      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/games`);
+      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com/games`);
       const jsonData = await response.json();
       setGameNames(jsonData);
     } catch (error) {
@@ -45,7 +45,7 @@ const InputThread = () => {
     e.preventDefault();
     try {
       const body = { gameName, description };
-      await fetch(`https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/threads`, {
+      await fetch(`https://chat-app-gametips-heroku.herokuapp.com/threads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

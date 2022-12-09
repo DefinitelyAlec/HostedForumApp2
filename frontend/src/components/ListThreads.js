@@ -18,7 +18,7 @@ const ListThreads = () => {
 
   const getThreads = async () => {
     try {
-      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com:${process.env.PORT}/threads`);
+      const response = await fetch(`https://chat-app-gametips-heroku.herokuapp.com/threads`);
       const jsonData = await response.json();
       setThreads(jsonData);
     } catch (error) {
